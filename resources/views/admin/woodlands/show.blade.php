@@ -8,5 +8,7 @@
 </head>
 <body>
   <h1>{{ $woodland->name }}</h1>
+  {{ $woodland->longitude_and_latitude}}
+  {{ $woodland->description}}
 </body>
 </html>

@@ -5,14 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Woodland;
 
-class WoodlandsController extends Controller
+class WoodlandController extends Controller
 {
-
-    public function __construct() {
-      $this->middleware('auth');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +15,7 @@ class WoodlandsController extends Controller
      */
     public function index()
     {
-        //get all the woodlands
-        $woodlands = Woodland::all();
-
-        return view('/admin/woodlands', ['woodlands' => $woodlands]);
+        return view('woodlands');
     }
 
     /**
@@ -33,7 +25,7 @@ class WoodlandsController extends Controller
      */
     public function create()
     {
-        return view('admin/woodlands/create');
+        //
     }
 
     /**
@@ -44,9 +36,7 @@ class WoodlandsController extends Controller
      */
     public function store(Request $request)
     {
-        $woodland = Woodland::create($request->all());
-
-        return redirect('admin/woodlands');
+        //
     }
 
     /**
@@ -57,12 +47,7 @@ class WoodlandsController extends Controller
      */
     public function show($id)
     {
-        $woodland = Woodland::where('id', $id)->first();
-
-        if(!$woodland) {
-          return redirect('/admin/woodlands');
-        }
-        return view('/admin/woodlands/show')->withWoodland($woodland);
+        //
     }
 
     /**

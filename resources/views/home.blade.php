@@ -5,7 +5,7 @@
     <img class="banner" src="{{asset('/img/banner1.jpg')}}" alt="">
   </div>
   <div class="foreground">
-    
+
   </div>
 
 @endsection

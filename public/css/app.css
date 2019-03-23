@@ -363,6 +363,10 @@ body {
   background-color: #172815;
   padding: 0; }
 
+.treeList {
+  padding-top: 70px;
+  list-style: none; }
+
 /* header */
 .header {
   background-color: #709255;

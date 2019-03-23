@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Woodlands</title>
-</head>
-<body>
-  <h1>Woodlands</h1>
+@extends('layouts.master')
+@section('title', 'My Home Page')
+@section('content')
 
   <section>
     @if (isset ($woodlands))
 
-      <ul>
+      <ul class="treeList">
         @foreach ($woodlands as $woodland)
           <li><a href="/admin/woodlands/{{ $woodland->id}}" name="{{ $woodland->name }}">{{ $woodland->name}}</a></li>
         @endforeach
@@ -26,5 +19,4 @@
     <div class="row">
       {!! Form::submit('Add Woodland', ['class' => 'button']) !!}
     </div>
-</body>
-</html>
+@endsection

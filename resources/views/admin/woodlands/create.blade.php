@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Add Woodland</title>
-</head>
-<body>
+@extends('layouts.master')
+@section('title', 'My Home Page')
+@section('content')
   <h1>Add Woodland</h1>
 
   {!! Form::open(array('action' => 'WoodlandsController@store', 'id' => 'createwoodlands')) !!}
+    {!! csrf_field() !!}
     <div id="addWoodland" class="row large-12 columns">
       {!! Form::label('name', 'Name:') !!}
       {!! Form::text('name', null, ['class' => 'large-8 columns']) !!}
@@ -29,5 +24,4 @@
       {!! Form::submit('Add Woodland', ['class' => 'button']) !!}
     </div>
   {!! Form::close() !!}
-</body>
-</html>
+@endsection
