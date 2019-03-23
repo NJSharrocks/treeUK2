@@ -19,3 +19,6 @@ modules:
             user: 'root'
             password: 'admin'
             dump: tests/_data/dump.sql
+            populate: true
+            cleanup: false
+            reconnect: true
