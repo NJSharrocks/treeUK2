@@ -3,27 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Woodland;
+use App\User;
+use App\Role;
 
-class WoodlandsController extends Controller
+class UserController extends Controller
 {
 
   public function __construct() {
-          $this->middleware('auth');
-      }
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        //get all the woodlands
-        $woodlands = Woodland::all();
+        $users = User::all();
 
-        return view('/admin/woodlands', ['woodlands' => $woodlands]);
+        return view('admin/users/index', ['users' => $users]);
     }
 
     /**
@@ -33,7 +33,7 @@ class WoodlandsController extends Controller
      */
     public function create()
     {
-        return view('admin/woodlands/create');
+        //
     }
 
     /**
@@ -44,9 +44,7 @@ class WoodlandsController extends Controller
      */
     public function store(Request $request)
     {
-        $woodland = Woodland::create($request->all());
-
-        return redirect('admin/woodlands');
+        //
     }
 
     /**
@@ -57,12 +55,7 @@ class WoodlandsController extends Controller
      */
     public function show($id)
     {
-        $woodland = Woodland::where('id', $id)->first();
-
-        if(!$woodland) {
-          return redirect('/admin/woodlands');
-        }
-        return view('/admin/woodlands/show')->withWoodland($woodland);
+        //
     }
 
     /**
@@ -73,8 +66,17 @@ class WoodlandsController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+      $user = User::where('id',$id)->first();
+          $roles = Role::all();
+
+          // if user does not exist return to list
+          if(!$user)
+          {
+              return redirect('/admin/users');
+              // you could add on here the flash messaging of article does not exist.
+          }
+          return view('admin/users/edit')->with('user', $user)->with('roles', $roles);
+      }
 
     /**
      * Update the specified resource in storage.
@@ -85,7 +87,12 @@ class WoodlandsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $roles = $request->get('role');
+
+        $user->roles()->sync($roles);
+
+        return redirect('/admin/users');
     }
 
     /**

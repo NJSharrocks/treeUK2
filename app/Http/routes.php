@@ -12,17 +12,13 @@
 */
 
 Route::resource('/', 'HomeController');
-
-
-Route::resource('/admin/woodlands', 'WoodlandsController');
+Route::resource('/woodlands', 'WoodlandController');
 
 
 Route::group(['middleware' => ['web']], function() {
-
-
   Route::auth();
-
-  Route::get('/', 'HomeController@index');
-  Route::resource('/woodlands', 'WoodlandController');
+  
+  Route::resource('/admin/woodlands', 'WoodlandsController');
+  Route::resource('admin/users', 'UserController');
 
 });

@@ -363,6 +363,9 @@ body {
   background-color: #172815;
   padding: 0; }
 
+.top {
+  padding-top: 70px; }
+
 .treeList {
   padding-top: 70px;
   list-style: none; }
