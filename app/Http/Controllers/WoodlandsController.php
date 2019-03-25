@@ -9,10 +9,10 @@ use App\Woodland;
 
 class WoodlandsController extends Controller
 {
-
-  public function __construct() {
-          $this->middleware('auth');
-      }
+  function __construct(Request $request)
+  {
+    $this->middleware('auth');
+  }
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +23,7 @@ class WoodlandsController extends Controller
         //get all the woodlands
         $woodlands = Woodland::all();
 
-        return view('/admin/woodlands', ['woodlands' => $woodlands]);
+        return view('/admin/woodlands/index', ['woodlands' => $woodlands]);
     }
 
     /**

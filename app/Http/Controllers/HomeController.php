@@ -13,6 +13,7 @@ class HomeController extends Controller
      * @return void
      */
 
+
     /**
      * Show the application dashboard.
      *

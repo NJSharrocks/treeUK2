@@ -10,8 +10,9 @@ use App\Role;
 class UserController extends Controller
 {
 
-  public function __construct() {
-        $this->middleware('auth');
+    function __construct(Request $request)
+    {
+      $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.
@@ -55,7 +56,12 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::where('id', $id)->first();
+
+        if(!$user) {
+          return redirect('/admin/users');
+        }
+        return view('/admin/users/show')->withUser($user);
     }
 
     /**

@@ -1,13 +1,13 @@
 @extends('layouts.master')
-@can('see_adminnav')
-  @include('admin/includes/adminnav')
-@endcan
+
 @section('title', 'My Home Page')
 @section('content')
 
+@can('see_adminnav')
+  @include('admin/includes/adminnav')
+@endcan
 
-
-  <h1 class="top">All Users</h1>
+  <h1>All Users</h1>
   @if (isset ($users))
 
       <table>
