@@ -15,7 +15,6 @@
             <th>Woodland</th>
             <th>Longitude & Latitude</th>
             <th>Description</th>
-            <th>Log a Sighting</th>
         </tr>
         @foreach ($woodlands as $woodland)
             <tr>
