@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Woodland;
-
-class WoodlandController extends Controller
+class AdminController extends Controller
 {
-
-
+    function __construct(Request $request)
+    {
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +19,7 @@ class WoodlandController extends Controller
      */
     public function index()
     {
-        $woodlands = Woodland::all();
-
-        return view('/woodlands', compact('woodlands'));
-
+        return view('/admin/index');
     }
 
     /**
@@ -32,7 +29,7 @@ class WoodlandController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -88,6 +85,6 @@ class WoodlandController extends Controller
      */
     public function destroy($id)
     {
-
+        //
     }
 }

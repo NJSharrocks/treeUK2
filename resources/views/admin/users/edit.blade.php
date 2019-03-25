@@ -8,7 +8,7 @@
 {!! Form::model($user, ['method' => 'PATCH', 'url' => '/admin/users/' . $user->id]) !!}
 
 <div>
-    {!! Form::label('name', 'Username:') !!}
+    {!! Form::label('name', 'Name:') !!}
     {!! Form::text('name', null) !!}
 </div>
 
@@ -27,7 +27,7 @@
 </div>
 
 <div>
-    {!! Form::submit('Update User and Roles') !!}
+    {!! Form::submit('Update User and Roles')!!}
 </div>
 
 

@@ -15,6 +15,7 @@ Route::resource('/', 'HomeController');
 Route::resource('/woodlands', 'WoodlandController');
 Route::resource('/admin/woodlands', 'WoodlandsController');
 Route::resource('admin/users', 'UserController');
+Route::resource('admin', 'AdminController');
 
 Route::group(['middleware' => ['web']], function() {
 

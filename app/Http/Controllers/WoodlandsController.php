@@ -73,7 +73,15 @@ class WoodlandsController extends Controller
      */
     public function edit($id)
     {
-        //
+      $woodland = Woodland::where('id',$id)->first();
+
+          // if user does not exist return to list
+          if(!$woodland)
+          {
+              return redirect('/admin/woodlands');
+              // you could add on here the flash messaging of article does not exist.
+          }
+          return view('admin/woodlands/edit')->with('woodland', $woodland);
     }
 
     /**
@@ -85,7 +93,9 @@ class WoodlandsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $woodland = Woodland::findOrFail($id);
+
+      return view('admin/woodlands');
     }
 
     /**
@@ -96,6 +106,10 @@ class WoodlandsController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $woodland = Woodland::find($id);
+
+      $woodland->delete();
+
+      return redirect('admin/woodlands');
     }
 }

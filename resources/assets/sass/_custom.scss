@@ -18,9 +18,10 @@ body {
 
 .header {
   background-color: #709255;
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
   z-index: 3;
+  position: relative;
 
 }
 
@@ -136,6 +137,13 @@ body {
   object-fit: cover;
 }
 
+.adminBanner {
+  min-width: 100%;
+  max-width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;
@@ -159,6 +167,14 @@ iframe {
   width: 100%;
 }
 
+.adminnav {
+  list-style-type: none;
+  text-align: center;
+}
+
+.adminnav a {
+  color: green;
+}
 
 /* 48em = 768px */
 

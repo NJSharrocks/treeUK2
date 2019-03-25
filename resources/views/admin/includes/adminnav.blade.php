@@ -1,7 +1,8 @@
 <nav>
-    <ul>
-        <li><a href="#">Create a new role</a></li>
-        <li><a href="#">Create a new permission</a></li>
-        <li><a href="/admin/users">See all users</a></li>
+    <ul class="adminnav">
+        <li><a href="/admin/woodlands">Add/Delete/Edit Woodland</a></li>
+        <li><a href="/admin/users">Delete/Edit User</a></li>
+        <li><a href="/admin/projects">Delete/Edit Projects</a></li>
+        <li><a href="/admin/sightings">Delete/Edit Sightings</a></li>
     </ul>
 </nav>

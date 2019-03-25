@@ -1,12 +1,8 @@
 @extends('layouts.master')
-
 @section('woodlands', 'Woodlands')
 @section('content')
-  <div class="background">
-    <img class="banner" src="{{asset('/img/banner1.jpg')}}" alt="">
-  </div>
-  <div class="foreground">
-
-  </div>
-
+  <img class="adminBanner" src="{{asset('/img/banner1.jpg')}}" alt="">
+@can('see_adminnav')
+  @include('admin/includes/adminnav')
+@endcan
 @endsection

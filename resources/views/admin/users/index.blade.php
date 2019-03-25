@@ -27,6 +27,12 @@
                           @endforeach
                       </ul>
                   </td>
+                  <td> <a href="users/{{ $user->id }}/edit">Update</a></td>
+                  <td>
+                  {!! Form::open(['method' => 'DELETE', 'route' => ['admin.users.destroy', $user->id]]) !!}
+                  {!! Form::submit('Delete') !!}
+                  {!! Form::close() !!}
+                  </td>
               </tr>
           @endforeach
       </table>

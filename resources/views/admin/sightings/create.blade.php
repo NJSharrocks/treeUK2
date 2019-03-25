@@ -3,7 +3,7 @@
 @section('content')
   <h1>Add Woodland</h1>
 
-  {!! Form::open(array('action' => 'WoodlandsController@store', 'id' => 'createwoodlands')) !!}
+  {!! Form::open(array('action' => 'SightingsController@store', 'id' => 'createsightings')) !!}
     {!! csrf_field() !!}
     <div>
       {!! Form::label('name', 'Name:') !!}

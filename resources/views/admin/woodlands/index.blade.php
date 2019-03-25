@@ -2,21 +2,34 @@
 @section('title', 'My Home Page')
 @section('content')
 
-  <section>
-    @if (isset ($woodlands))
+@can('see_adminnav')
+  @include('admin/includes/adminnav')
+@endcan
 
-      <ul class="treeList">
-        @foreach ($woodlands as $woodland)
-          <li><a href="/admin/woodlands/{{ $woodland->id}}" name="{{ $woodland->name }}">{{ $woodland->name}}</a></li>
-        @endforeach
-      </ul>
-    @else
-      <p> no woodlands added yet </p>
-    @endif
-  </section>
+  <h1>All Woodlands</h1>
+  @if (isset ($woodlands))
 
-  {{ Form::open(array('action' => 'WoodlandsController@create', 'method' => 'get')) }}
-    <div class="row">
-      {!! Form::submit('Add Woodland', ['class' => 'button']) !!}
-    </div>
+      <table>
+          <tr>
+              <th>Woodland</th>
+              <th>Longitude & Latitude</th>
+              <th>Description</th>
+          </tr>
+          @foreach ($woodlands as $woodland)
+              <tr>
+                  <td><a href="/admin/woodlands/{{ $woodland->id }}" name="{{ $woodland->name }}">{{ $woodland->name }}</a></td>
+                  <td> {{ $woodland->longitude_and_latitude }}</td>
+                  <td> {{ $woodland->description }} </td>
+                  <td> <a href="woodlands/{{ $woodland->id }}/edit">Update</a></td>
+                  <td>
+                  {!! Form::open(['method' => 'DELETE', 'route' => ['admin.woodlands.destroy', $woodland->id]]) !!}
+                  {!! Form::submit('Delete') !!}
+                  {!! Form::close() !!}
+                  </td>
+              </tr>
+          @endforeach
+      </table>
+  @else
+      <p>No woodlands</p>
+  @endif
 @endsection

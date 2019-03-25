@@ -7,11 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Woodland;
+use App\Woodlands;
 
-class WoodlandController extends Controller
+class SightingsController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
@@ -19,10 +18,7 @@ class WoodlandController extends Controller
      */
     public function index()
     {
-        $woodlands = Woodland::all();
-
-        return view('/woodlands', compact('woodlands'));
-
+        //
     }
 
     /**
@@ -32,7 +28,7 @@ class WoodlandController extends Controller
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -43,7 +39,7 @@ class WoodlandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -88,6 +84,6 @@ class WoodlandController extends Controller
      */
     public function destroy($id)
     {
-
+        //
     }
 }
