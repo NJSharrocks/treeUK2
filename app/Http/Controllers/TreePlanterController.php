@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Project;
 
-class ProjectController extends Controller
+class TreePlanterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,10 @@ class ProjectController extends Controller
      */
     public function index()
     {
-      return view('project');
+      $projects = Project::all();
+
+      return view('treeplanter', ['projects' => $projects]);
+
     }
 
     /**

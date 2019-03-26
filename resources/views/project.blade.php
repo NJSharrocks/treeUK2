@@ -15,7 +15,7 @@
     <a href="/landowner">
     <div class="columnImage imageCoverOne">
       <img class="imageCover" src="{{asset('/img/banner8.jpg')}}" alt="">
-      <p class="centerText">Want to plant trees or hedges on your land? Create an event here.</p>
+      <p class="centerText">Want volunteers to plant trees or hedges on your land? Create an event here.</p>
     </div>
     </a>
 

@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Project;
 
-class ProjectController extends Controller
+class ProjectAdminController extends Controller
 {
+    function __construct(Request $request)
+    {
+      $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +20,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-      return view('project');
+        $projects = Project::all();
+
+        return view('admin/projects/index', ['projects' => $projects]);
     }
 
     /**
@@ -37,7 +43,12 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        Project::create($input);
+
+        return redirect('/project');
+
     }
 
     /**
@@ -59,7 +70,15 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+      $project = Project::where('id',$id)->first();
+
+          // if user does not exist return to list
+          if(!$project)
+          {
+              return redirect('/admin/projects');
+              // you could add on here the flash messaging of article does not exist.
+          }
+          return view('admin/projects/edit')->with('project', $project);
     }
 
     /**
@@ -71,7 +90,9 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $projects = Project::findOrFail($id);
+
+      return view('admin/projects/index');
     }
 
     /**
@@ -82,6 +103,10 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $project = Project::find($id);
+
+      $project->delete();
+
+      return redirect('admin/projects');
     }
 }

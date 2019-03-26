@@ -15,10 +15,13 @@ Route::resource('/', 'HomeController');
 Route::resource('/woodlands', 'WoodlandController');
 Route::resource('/admin/woodlands', 'WoodlandsController');
 Route::resource('admin/users', 'UserController');
+Route::resource('admin/projects', 'ProjectAdminController');
 Route::resource('admin', 'AdminController');
 Route::resource('/about', 'AboutController');
 Route::resource('/project', 'ProjectController');
 Route::resource('/contact', 'ContactController');
+Route::resource('/landowner', 'LandOwnerController');
+Route::resource('treeplanter', 'TreePlanterController');
 
 Route::group(['middleware' => ['web']], function() {
 
