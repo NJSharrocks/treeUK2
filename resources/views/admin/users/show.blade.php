@@ -6,5 +6,15 @@
 </head>
 <body>
   <h1>{{ $user->name }}</h1>
-  {{ $user->email}}
+
+
+  <table>
+    <tr>
+      <th>E-mail</th>
+    </tr>
+    <tr>
+      <td>{{ $user->email}}</td>
+    </tr>
+  </table>
+
 @endsection

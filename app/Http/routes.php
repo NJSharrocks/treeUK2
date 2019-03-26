@@ -16,6 +16,9 @@ Route::resource('/woodlands', 'WoodlandController');
 Route::resource('/admin/woodlands', 'WoodlandsController');
 Route::resource('admin/users', 'UserController');
 Route::resource('admin', 'AdminController');
+Route::resource('/about', 'AboutController');
+Route::resource('/project', 'ProjectController');
+Route::resource('/contact', 'ContactController');
 
 Route::group(['middleware' => ['web']], function() {
 

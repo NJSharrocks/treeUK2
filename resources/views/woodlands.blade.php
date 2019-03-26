@@ -2,8 +2,10 @@
 @section('woodlands', 'Woodlands')
 @section('content')
 
+<h2>FIND YOUR NEAREST ANCIENT WOODLAND</h2>
+
 <div class='mapContain'>
-<iframe frameborder=0 class='map' src='//www.zeemaps.com/pub?group=3367024&legend=1&locate=1&search=1&x=-2.886250&y=53.566252&z=12'> </iframe>
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1gmkg3TxoKFExZuPFUQlYXL2raXc90f-n"></iframe>
 </div>
 
 
@@ -12,7 +14,7 @@
 
     <table>
         <tr>
-            <th>Woodland</th>
+            <th class="woodlandTable">Woodland</th>
             <th>Longitude & Latitude</th>
             <th>Description</th>
         </tr>
@@ -24,6 +26,7 @@
             </tr>
         @endforeach
     </table>
+
 @else
     <p>No woodlands</p>
 @endif
