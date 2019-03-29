@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'My Home Page')
+@section('users', 'Users')
 @section('content')
 
 @can('see_adminnav')

@@ -8,7 +8,7 @@
         <li><a href="{{ url('/register') }}">Register</a></li>
     @else
     <li><a href="admin/">
-      {{ Auth::user()->name }}
+      {{ Auth::user()->name }} - Admin
     </a></li>
     <li><a href="{{ url('/logout') }}">Logout</a></li>
     @endif

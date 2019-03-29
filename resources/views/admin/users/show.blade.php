@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('woodlands', 'Woodlands')
+@section('users', 'Users')
 @section('content')
   <title>{{ $user->name }}</title>
 </head>

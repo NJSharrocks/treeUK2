@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'My Home Page')
+@section('woodland', 'Woodlands')
 @section('content')
 
 @can('see_adminnav')

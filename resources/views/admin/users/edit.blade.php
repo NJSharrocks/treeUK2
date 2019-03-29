@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'My Home Page')
+@section('users', 'Users')
 @section('content')
 <div class="loginForm">
   <h1 class="top">Edit - {{ $user->name }}</h1>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('woodlands', 'Woodlands')
+@section('projects', 'Projects')
 @section('content')
 <div class="loginForm">
   <h1 class="top">Edit - {{ $project->land_owners_username }}</h1>

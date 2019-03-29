@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('woodlands', 'Woodlands')
+@section('about', 'About')
 @section('content')
   <div class="background">
     <img class="banner" src="{{asset('/img/banner4.jpg')}}" alt="">
