@@ -3,6 +3,5 @@
         <li><a href="/admin/woodlands">Add/Delete/Edit Woodland</a></li>
         <li><a href="/admin/users">Delete/Edit User</a></li>
         <li><a href="/admin/projects">Delete/Edit Projects</a></li>
-        <li><a href="/admin/sightings">Delete/Edit Sightings</a></li>
     </ul>
 </nav>

@@ -7,6 +7,12 @@
 @endcan
 
   <h1>All Woodlands</h1>
+  {{ Form::open(array('action' => 'WoodlandsController@create', 'method' => 'get')) }}
+      <div class="signIn">
+          {!! Form::submit('Add Woodland') !!}
+      </div>
+  {{ Form::close() }}
+
   @if (isset ($woodlands))
 
       <table>

@@ -21,7 +21,7 @@ Route::resource('/about', 'AboutController');
 Route::resource('/project', 'ProjectController');
 Route::resource('/contact', 'ContactController');
 Route::resource('/landowner', 'LandOwnerController');
-Route::resource('treeplanter', 'TreePlanterController');
+Route::resource('/treeplanter', 'TreePlanterController');
 
 Route::group(['middleware' => ['web']], function() {
 

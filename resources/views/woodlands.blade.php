@@ -10,6 +10,7 @@
 
 
 <h1>All Woodlands</h1>
+
 @if (isset ($woodlands))
 
     <table>

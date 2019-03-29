@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Woodland;
+use App\Sighting;
 
 class WoodlandController extends Controller
 {
