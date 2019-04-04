@@ -1508,6 +1508,9 @@ body {
   background-color: #709255;
   margin-top: 0; }
 
+.centerText:hover {
+  background-color: #172815; }
+
 .signIn {
   background-color: #709255; }
 
@@ -1531,7 +1534,11 @@ body {
 
 .columnImage {
   max-width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  transition: transform .5s; }
+
+.columnImage:hover {
+  transform: scale(1.05); }
 
 .homeText {
   text-align: center;
@@ -1595,15 +1602,16 @@ input, textarea {
   background-color: #172815;
   color: #95B46A; }
 
-/* 48em = 768px */
-@media (min-width: 48em) {
+p, td, th {
+  font-family: sans-serif; }
+
+@media (min-width: 65em) {
   .header li {
     float: left; }
   .header li a {
     padding: 20px 30px; }
   .header {
-    width: 100%;
-    position: fixed; }
+    width: 100%; }
   .header .menu {
     clear: none;
     max-height: none; }

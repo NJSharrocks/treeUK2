@@ -6,8 +6,8 @@
 
 <div class="homeText">
   <h1>The UK's Ancient Woodlands</h1>
-  <h5>They've been around for centuries but these areas of outstanding natural beauty are under threat.</h5>
-  <h5>Visit one near you today and help save this unique landscape!</p>
+  <p>They've been around for centuries but these areas of outstanding natural beauty are under threat.</p>
+  <p>Visit one near you today and help save this unique landscape!</p>
 </div>
 
 <div class="columnImages">

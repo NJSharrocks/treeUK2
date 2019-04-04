@@ -3,6 +3,7 @@ body {
   font-family: 'Oswald', sans-serif;
   background-color: white;
   max-width: 100vw;
+
 }
 
 .logo {
@@ -167,6 +168,10 @@ body {
   margin-top: 0;
 }
 
+.centerText:hover {
+  background-color: #172815;
+}
+
 .signIn {
   background-color: #709255;
 }
@@ -197,6 +202,11 @@ body {
 .columnImage {
   max-width: 90%;
   margin: 0 auto;
+  transition: transform .5s;
+}
+
+.columnImage:hover {
+  transform: scale(1.05);
 }
 
 .homeText {
@@ -269,9 +279,11 @@ input, textarea {
   color: #95B46A;
 }
 
-/* 48em = 768px */
+p, td, th {
+  font-family: sans-serif;
+}
 
-@media (min-width: 48em) {
+@media (min-width: 65em) {
   .header li {
     float: left;
   }
@@ -280,7 +292,6 @@ input, textarea {
   }
   .header {
     width: 100%;
-    position: fixed;
 
   }
   .header .menu {

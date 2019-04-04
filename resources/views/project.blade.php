@@ -7,8 +7,8 @@
 
   <div class="homeText">
     <h1>The Tree Plant Project</h1>
-    <h4>We're not just about saving ancient woodlands, we want to promote the planting of new native tree expanses.</h4>
-    <h5>So whether you want people to help plant trees on your land or you're looking to give back to the Earth and take part in a planting event, then our Tree Plant Project is for you!</p>
+    <p>We're not just about saving ancient woodlands, we want to promote the planting of new native tree expanses.</p>
+    <p>So whether you want people to help plant trees on your land or you're looking to give back to the Earth and take part in a planting event, then our Tree Plant Project is for you!</p>
   </div>
 
   <div class="columnImages">
