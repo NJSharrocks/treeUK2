@@ -16,6 +16,9 @@ class TreePlanterController extends Controller
      */
     public function index()
     {
+      /**Returns the 'treeplanter' view when the route is activitated
+      and allows all of the items in the Project database to be used
+      */
       $projects = Project::all();
 
       return view('treeplanter', ['projects' => $projects]);

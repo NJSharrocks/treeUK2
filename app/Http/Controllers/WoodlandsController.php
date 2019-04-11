@@ -11,6 +11,8 @@ class WoodlandsController extends Controller
 {
   function __construct(Request $request)
   {
+    //ensures this controller and all corresponding routes are behind
+    //the auth meaning login is required to access them
     $this->middleware('auth');
   }
     /**
@@ -20,9 +22,9 @@ class WoodlandsController extends Controller
      */
     public function index()
     {
-        //get all the woodlands
+        //get all the woodlands and make them available to use in the view
         $woodlands = Woodland::all();
-
+        //return the admin woodlands view
         return view('/admin/woodlands/index', ['woodlands' => $woodlands]);
     }
 
@@ -33,7 +35,9 @@ class WoodlandsController extends Controller
      */
     public function create()
     {
-        return view('admin/woodlands/create');
+      //returns the admin woodlands create view if the create controller
+      //is activated
+        return view('admin.woodlands.create');
     }
 
     /**
@@ -44,6 +48,8 @@ class WoodlandsController extends Controller
      */
     public function store(Request $request)
     {
+      /*ensures that all data created by the user is stored
+      in the woodland database*/
         $woodland = Woodland::create($request->all());
 
         return redirect('admin/woodlands');
@@ -57,6 +63,9 @@ class WoodlandsController extends Controller
      */
     public function show($id)
     {
+      /*This shows the details of a woodland when selected and loads
+      the show view if there is a woodland matching the selected woodland
+      id*/
         $woodland = Woodland::where('id', $id)->first();
 
         if(!$woodland) {
@@ -73,15 +82,11 @@ class WoodlandsController extends Controller
      */
     public function edit($id)
     {
-      $woodland = Woodland::where('id',$id)->first();
+      /*allows the editing of a woodland database record if the woodland
+      id exists. Loads the edit view*/
+      $woodland = Woodland::findOrFail($id);
 
-          // if user does not exist return to list
-          if(!$woodland)
-          {
-              return redirect('/admin/woodlands');
-              // you could add on here the flash messaging of article does not exist.
-          }
-          return view('admin/woodlands/edit')->with('woodland', $woodland);
+      return view('admin.woodlands.edit', compact('woodland'));
     }
 
     /**
@@ -93,9 +98,13 @@ class WoodlandsController extends Controller
      */
     public function update(Request $request, $id)
     {
+      /*allows the updating of the database record and returns the
+      admin wooldnad view*/
       $woodland = Woodland::findOrFail($id);
 
-      return view('admin/woodlands');
+      $woodland->update($request->all());
+
+      return redirect('admin/woodlands');
     }
 
     /**
@@ -106,6 +115,7 @@ class WoodlandsController extends Controller
      */
     public function destroy($id)
     {
+      /*allows the deletion of a woodland record*/
       $woodland = Woodland::find($id);
 
       $woodland->delete();

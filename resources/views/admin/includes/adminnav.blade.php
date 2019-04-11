@@ -1,3 +1,4 @@
+<!--creates the nav for the admin section of the site-->
 <nav>
     <ul class="adminnav">
         <li><a href="/admin/woodlands">Add/Delete/Edit Woodland</a></li>

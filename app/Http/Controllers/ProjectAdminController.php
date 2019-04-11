@@ -20,6 +20,10 @@ class ProjectAdminController extends Controller
      */
     public function index()
     {
+      /**Returns the 'admin projects' view when the route is activitated.
+      Makes available all of the projects from the database
+      */
+
         $projects = Project::all();
 
         return view('admin/projects/index', ['projects' => $projects]);
@@ -43,6 +47,9 @@ class ProjectAdminController extends Controller
      */
     public function store(Request $request)
     {
+      /**Sets up the ability to store data from the form on the Admin
+      Project page into the project database which allows an admin to
+      edit current projects*/
         $input = $request->all();
 
         Project::create($input);
@@ -70,15 +77,12 @@ class ProjectAdminController extends Controller
      */
     public function edit($id)
     {
-      $project = Project::where('id',$id)->first();
+      /**This allows the admin to edit current projects by finding the
+      details of the project by identifying the id and returning the edit
+      view*/
+      $project = Project::findOrFail($id);
 
-          // if user does not exist return to list
-          if(!$project)
-          {
-              return redirect('/admin/projects');
-              // you could add on here the flash messaging of article does not exist.
-          }
-          return view('admin/projects/edit')->with('project', $project);
+      return view('admin/projects/edit', compact('project'));
     }
 
     /**
@@ -90,9 +94,15 @@ class ProjectAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $projects = Project::findOrFail($id);
 
-      return view('admin/projects/index');
+      /*Allows the updating of data from the edit view and then
+      returns the updated data in the admin projects view*/
+
+      $project = Project::findOrFail($id);
+
+      $project->update($request->all());
+
+      return redirect('admin/projects');
     }
 
     /**
@@ -103,6 +113,9 @@ class ProjectAdminController extends Controller
      */
     public function destroy($id)
     {
+
+      /*Allows the deletion of a project record*/
+
       $project = Project::find($id);
 
       $project->delete();

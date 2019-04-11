@@ -12,6 +12,8 @@ class UserController extends Controller
 
     function __construct(Request $request)
     {
+      /**This means that the users controller is protected by the auth
+      meaning a login is required for any views in this controller*/
       $this->middleware('auth');
     }
     /**
@@ -22,6 +24,9 @@ class UserController extends Controller
 
     public function index()
     {
+      /*This makes all the items in the user database table available in the
+      view
+      */
         $users = User::all();
 
         return view('admin/users/index', ['users' => $users]);
@@ -57,7 +62,9 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::where('id', $id)->first();
-
+      /*This if statement returns the admin user page if the user isn't found
+      or shows the details of the specific user if the user that is being accessed
+      is found*/
         if(!$user) {
           return redirect('/admin/users');
         }
@@ -72,6 +79,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+
+      /*This makes the roles table from the database available to the edit
+      view and allows the editing of a user's role.*/
       $user = User::where('id',$id)->first();
           $roles = Role::all();
 
@@ -79,8 +89,10 @@ class UserController extends Controller
           if(!$user)
           {
               return redirect('/admin/users');
-              // you could add on here the flash messaging of article does not exist.
+
           }
+          //if user does exist then the edit view is loaded with the user's current
+          //details
           return view('admin/users/edit')->with('user', $user)->with('roles', $roles);
       }
 
@@ -93,11 +105,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+      /*Allows the updating of user's details including the roles
+      which will update in each respective table in the database*/
         $user = User::findOrFail($id);
         $roles = $request->get('role');
 
         $user->roles()->sync($roles);
-
+        $user->update($request->all());
+      //then returns the admin users view
         return redirect('/admin/users');
     }
 
@@ -109,6 +124,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
+      /*allows the deletion of a record from the users table in the database*/
         $user = User::find($id);
 
         $user->delete();

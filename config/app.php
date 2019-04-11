@@ -156,7 +156,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Cornford\Googlmapper\MapperServiceProvider::class,
     ],
 
     /*
@@ -202,9 +201,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //imports the form and html facades to create a better looking view
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
-        'Mapper' => Cornford\Googlmapper\Facades\MapperFacade::class,
 
     ],
 

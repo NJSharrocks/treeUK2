@@ -15,6 +15,9 @@ class AboutController extends Controller
      */
     public function index()
     {
+
+      /**Returns the 'about' view when the route is activitated
+      */
       return view('about');
     }
 

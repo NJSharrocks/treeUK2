@@ -19,6 +19,8 @@ class AdminController extends Controller
      */
     public function index()
     {
+      /**Returns the 'admin index' view when the route is activitated
+      */
         return view('/admin/index');
     }
 

@@ -15,6 +15,8 @@ class LandOwnerController extends Controller
      */
     public function index()
     {
+      /**Returns the 'landowner' view when the route is activitated
+      */
         return view('landowner');
     }
 

@@ -10,10 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::resource('/admin/woodlands', 'WoodlandsController');
 Route::resource('/', 'HomeController');
 Route::resource('/woodlands', 'WoodlandController');
-Route::resource('/admin/woodlands', 'WoodlandsController');
 Route::resource('admin/users', 'UserController');
 Route::resource('admin/projects', 'ProjectAdminController');
 Route::resource('admin', 'AdminController');

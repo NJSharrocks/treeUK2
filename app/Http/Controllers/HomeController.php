@@ -21,6 +21,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+      /**Returns the 'home' view when the route is activitated
+      */
         return view('home');
     }
 }

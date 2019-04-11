@@ -16,6 +16,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
+      /**Returns the 'project' view when the route is activitated
+      */
       return view('project');
     }
 
@@ -59,7 +61,7 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -71,7 +73,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**

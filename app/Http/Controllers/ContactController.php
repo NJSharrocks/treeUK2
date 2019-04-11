@@ -15,6 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
+      /**Returns the 'contact' view when the route is activitated
+      */
       return view('contact');
     }
 

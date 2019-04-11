@@ -20,6 +20,10 @@ class WoodlandController extends Controller
      */
     public function index()
     {
+      /**Returns the 'woodlands' view when the route is activitated
+      and makes all woodland items in the database available to use in
+      the view
+      */
         $woodlands = Woodland::all();
 
         return view('/woodlands', compact('woodlands'));
